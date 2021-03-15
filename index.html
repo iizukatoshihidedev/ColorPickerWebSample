@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<title>超簡単カラーピック</title>
+    <!--Script-->
+	<script src="../../BasicTool/main.js"></script>
+	<script src="../../BasicTool/ga.js"></script>
+    <!--Script-->
+    <style>
+        body {
+            text-align: center;
+        }
+        
+        .col-box {
+            background-color: skyblue;
+            padding: 10px 20px;
+        }
+        
+        .row-box{
+            text-align: center;
+            flex-direction: row;
+            align-items: center;
+        }
+        
+        .cell {
+            position: relative;
+            height: 1em;
+            width: 1em;
+        }
+        
+        #tgt-img {
+            width:auto;
+            height:auto;
+            max-width: 300px;
+            max-height: 300px;
+        }
+        
+        #footer {
+            position: absolute;
+            display: inline-block;
+            bottom:80px;
+            left: 0px;
+            width:100%;
+            color: #aaa;
+            font-size: 16px;
+            background: #555;
+        }
+    </style>
+</head>
+<body>
+    <h1>超簡単カラーピック</h1>
+    <div class="col-box">
+        <div>XY: <span id="xy-txt"></span></div>
+        <div>RGBA: <span id="rgba-txt"></span></div>
+        <div class="row-box">Color: <div class="cell"></div></div>
+        <img id="tgt-img" alt=""><br/>
+        <input type="file" id="file" accept="image/png,image/jpg,image/jpeg,image/gif" onchange="scan(event);">
+        <script src="./program.js"></script>
+    </div>
+    <hr/>
+    <div id="footer">
+        <script>
+            document.write("2021©️" + document.domain);
+        </script>
+    </div>
+</body>
+</html>
